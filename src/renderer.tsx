@@ -1,14 +1,11 @@
 import { createRoot } from "react-dom/client";
-
-function App() {
+import App from "./App";
+function ReactRoot() {
     return (
-        <>
-            <h1>Hello from React + Electron!</h1>
-            <p>omg it working</p>
-        </>
+        <App />
     );
 }
 
 const root = createRoot(document.getElementById("app")!);
 
-root.render(<App />);
+root.render(<ReactRoot />);
