@@ -1,14 +1,19 @@
-import React from 'react'; 
-import os from 'node:os';
-
+import React from 'react';
 
 const App = () => {
+    const [memory, setMemory] = React.useState<number | null>(null);
 
-  console.log('os', os)
+    React.useEffect(() => {
+        const loadMemory = async () => {
+            const memory = await window.electronAPI.getMemory();
 
-  return (
-    <div>App</div>
-  )
-}
+            console.log('memory:', memory);
+        };
 
-export default App
+        loadMemory();
+    }, []);
+
+    return <div>App</div>;
+};
+
+export default App;
