@@ -1,16 +1,11 @@
 import React from 'react';
 
 const App = () => {
-    const [memory, setMemory] = React.useState<number | null>(null);
 
     React.useEffect(() => {
-        const loadMemory = async () => {
-            const memory = await window.electronAPI.getMemory();
-
-            console.log('memory:', memory);
-        };
-
-        loadMemory();
+        window.electronAPI.getMemory().then(result => {
+          console.log('result', result);
+        })
     }, []);
 
     return <div>App</div>;
