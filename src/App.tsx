@@ -8,7 +8,7 @@ const App = () => {
         })
     }, []);
 
-    return <div>App</div>;
+    return <h3>Hello world</h3>;
 };
 
 export default App;
