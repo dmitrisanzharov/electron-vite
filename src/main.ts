@@ -12,6 +12,16 @@ ipcMain.handle('foo-from-main', () => {
     return 'omg string from main';
 });
 
+ipcMain.handle('main-os-memory-info', () => {
+    const total = os.totalmem();
+    const free = os.freemem();
+
+    return {
+        totalMemory: total,
+        freeMemory: free
+    };
+});
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
     app.quit();

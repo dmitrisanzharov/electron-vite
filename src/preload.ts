@@ -4,4 +4,5 @@ import { contextBridge, ipcRenderer } from 'electron';
 
 contextBridge.exposeInMainWorld('electronAPI', {
     anyName: () => ipcRenderer.invoke('foo-from-main'),
+    getMemoryFromPreload: () => ipcRenderer.invoke('main-os-memory-info')
 });
