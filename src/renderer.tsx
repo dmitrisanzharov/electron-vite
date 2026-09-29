@@ -2,15 +2,11 @@ import { createRoot } from 'react-dom/client';
 import { useEffect } from 'react';
 
 function ReactRoot() {
-
-
-     useEffect(() => {
-       window.electronAPI.anyName().then(result => {
-         console.log('result', result);
-       })
-   }, []);
-
-
+    useEffect(() => {
+        (window as any).myElectronAPI.anyName().then((result: any) => {
+            console.log('result in renderer', result);
+        });
+    }, []);
 
     return (
         <>

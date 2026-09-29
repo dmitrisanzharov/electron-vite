@@ -2,6 +2,6 @@
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 import { contextBridge, ipcRenderer } from 'electron';
 
-contextBridge.exposeInMainWorld('electronAPI', {
+contextBridge.exposeInMainWorld('myElectronAPI', {
     anyName: () => ipcRenderer.invoke('foo-from-main'),
 });
