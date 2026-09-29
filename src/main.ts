@@ -1,6 +1,18 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
+import os from 'node:os';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
+
+
+// node stuff
+// console.log('os', os);
+
+ipcMain.handle('foo-from-main', () => {
+
+    return 'omg string from main';
+});
+
+
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
