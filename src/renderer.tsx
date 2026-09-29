@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 function ReactRoot() {
     useEffect(() => {
-        (window as any).myElectronAPI.anyName().then((result: any) => {
+        (window as any).electronAPI.anyName().then((result: any) => {
             console.log('result in renderer', result);
         });
     }, []);
